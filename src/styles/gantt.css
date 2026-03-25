@@ -1,0 +1,279 @@
+/* Variables CSS personalizadas */
+:root {
+    --primary: #1e40af;
+    --secondary: #3b82f6;
+    --accent: #f59e0b;
+}
+
+/* Fuente y estilos base */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+}
+
+body {
+    background-color: #f1f5f9;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sticky column para tabla */
+.sticky-col {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 40;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Gantt Container */
+.gantt-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 80px;
+}
+
+/* Celdas de mes */
+.month-col {
+    min-width: 240px;
+    border-left: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+.program-name {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 4px;
+    display: block;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* Fila de actividad */
+.activity-row:hover {
+    background-color: #f8fafc;
+}
+
+/* Badge de fecha */
+.date-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    margin-right: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Caja de justificación */
+.justification-box {
+    margin-top: 8px;
+    padding: 6px;
+    background-color: #fefce8;
+    border-left: 3px solid #facc15;
+    border-radius: 2px;
+    font-size: 0.68rem;
+    line-height: 1.25;
+    color: #451a03;
+}
+
+/* Celdas vacías */
+.empty-cell {
+    background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+}
+
+/* ============================================
+   ESTILOS DE IMPRESIÓN - 2 MESES POR PÁGINA
+   Optimizado para máxima información vertical
+   ============================================ */
+
+@media print {
+    /* Ocultar UI y mostrar solo contenedor de impresión */
+    body > * {
+        display: none !important;
+    }
+    
+    #print-container {
+        display: block !important;
+    }
+    
+    /* Configuración de página */
+    @page {
+        size: A4 landscape;
+        margin: 5mm;
+    }
+    
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Página de impresión */
+    .print-page {
+        page-break-after: always;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .print-page:last-child {
+        page-break-after: avoid;
+    }
+    
+    /* Tabla de impresión */
+    .print-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 6.5pt;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.1;
+    }
+    
+    .print-table th {
+        background-color: #1e293b;
+        color: white;
+        font-weight: bold;
+        padding: 2px 3px;
+        border: 0.5pt solid #333;
+        text-align: left;
+        font-size: 6pt;
+        line-height: 1.1;
+        vertical-align: top;
+    }
+    
+    .print-table td {
+        border: 0.5pt solid #999;
+        padding: 2px 3px;
+        text-align: left;
+        background-color: white;
+        vertical-align: top;
+        line-height: 1.1;
+    }
+    
+    /* Filas con borde superior más oscuro */
+    .print-row td {
+        border-top: 0.5pt solid #333 !important;
+    }
+    
+    /* Header de página */
+    .print-header {
+        font-weight: bold;
+        padding: 3px 0;
+        font-size: 9pt;
+        text-align: left;
+        margin-bottom: 2px;
+        border-bottom: 1pt solid #333;
+    }
+    
+    /* Columna de institución */
+    .print-institucion-name {
+        width: 140px;
+        min-width: 140px;
+        font-weight: bold;
+        background-color: #f1f5f9;
+        vertical-align: top;
+        font-size: 6pt;
+        padding: 2px;
+    }
+    
+    /* Columna de mes */
+    .print-month-col {
+        word-wrap: break-word;
+        vertical-align: top;
+        overflow: visible;
+    }
+    
+    /* Actividad individual */
+    .print-activity {
+        margin: 1px 0;
+        padding: 1.5px 2px;
+        border: 0.5pt solid #ddd;
+        background-color: #fafafa;
+        font-size: 6pt;
+        line-height: 1.1;
+        page-break-inside: avoid;
+    }
+    
+    .print-activity-name {
+        font-weight: bold;
+        margin-bottom: 0.5px;
+        color: #1e293b;
+        font-size: 6pt;
+        line-height: 1.1;
+    }
+    
+    .print-activity-dates {
+        font-size: 5.5pt;
+        color: #666;
+        margin-bottom: 0.5px;
+        line-height: 1;
+    }
+    
+    .print-activity-justificacion {
+        font-size: 5pt;
+        color: #777;
+        line-height: 1;
+        margin: 0.5px 0 0 0;
+    }
+    
+    /* Filas DSPM */
+    .dspm-solo {
+        background-color: #eff6ff;
+    }
+    
+    .dspm-conjunta {
+        background-color: #faf5ff;
+    }
+    
+    /* Evitar cortes innecesarios */
+    .print-page {
+        page-break-inside: avoid;
+    }
+    
+    /* Asegurar que no se corten filas */
+    .print-table tbody tr {
+        page-break-inside: avoid;
+    }
+}
+
+/* Estilos adicionales para visualización normal */
+#print-btn {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#print-btn:active {
+    transform: scale(0.98);
+}
+
+/* Estilos para Calendario Mensual */
+table td {
+    position: relative;
+}
+
+table td:hover {
+    box-shadow: inset 0 0 8px rgba(59, 130, 246, 0.1);
+}
+
+/* Activity box en calendario */
+.activity-badge {
+    border-radius: 4px;
+    word-break: break-word;
+}

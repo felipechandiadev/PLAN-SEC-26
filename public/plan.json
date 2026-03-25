@@ -1,0 +1,213 @@
+{
+  "planificacion_anual": {
+    "nombre_proyecto": "Parral Seguro 2026",
+    "comuna": "Parral",
+    "direccion": "Dirección de Seguridad Pública (DSPM)",
+    "descripcion_general": "Plan integrado de seguridad territorial coordinado por DSPM. Alineado con Propósitos 1 (RLH), 2 (Drogas) y 3 (RLNH) del Plan Comunal 2023-2024.",
+    
+    "mapeo_propositos": {
+      "0.0": "Coordinación Transversal",
+      "1.1": "Rondas Fiscalización Residencial",
+      "1.3": "Rondas Alto Impacto Sectores Identificados",
+      "1.4": "Control de Acceso / Identidad en Zonas Críticas",
+      "2.1": "Mesas Territoriales SENDA (8 anuales)",
+      "2.2": "Levantamiento Factores Riesgo / Caracterización",
+      "2.3": "Charlas Prevención Drogas (12 anuales)",
+      "3.1": "Fiscalización Comercio Informal",
+      "3.2": "Recuperación Áreas Críticas",
+      "3.3": "Rondas Nocturnas Patrullas Mixtas (Diarias)",
+      "3.4": "Operativos Abigeato (6 anuales)"
+    },
+    
+    "instituciones_participantes": {
+      "dspm": { "nombre": "Dirección de Seguridad Pública", "rol": "Coordinadora/Ejecutora", "color_clase": "bg-blue-600", "abreviacion": "DSPM" },
+      "carabineros": { "nombre": "Carabineros de Chile", "rol": "Ejecutora/Coordinadora", "color_clase": "bg-green-500", "abreviacion": "CARAB" },
+      "senda": { "nombre": "SENDA", "rol": "Prevención Drogas", "color_clase": "bg-amber-500", "abreviacion": "SENDA" },
+      "sag": { "nombre": "SAG", "rol": "Control Abigeato", "color_clase": "bg-red-600", "abreviacion": "SAG" },
+      "slep": { "nombre": "SLEP", "rol": "Coordinadora Educativa", "color_clase": "bg-purple-600", "abreviacion": "SLEP" },
+      "pdi": { "nombre": "PDI", "rol": "Investigación/Extranjería", "color_clase": "bg-indigo-600", "abreviacion": "PDI" },
+      "gendarmeria": { "nombre": "Gendarmería de Chile", "rol": "Control Penitenciario", "color_clase": "bg-gray-700", "abreviacion": "GEND" },
+      "oln": { "nombre": "OLN (Niñez)", "rol": "Protección Infancia", "color_clase": "bg-pink-500", "abreviacion": "OLN" },
+      "seguridad_retiro": { "nombre": "Seguridad Comuna Retiro", "rol": "Coordinadora Local", "color_clase": "bg-orange-600", "abreviacion": "RETIRO" }
+    },
+
+    "calendario": [
+      {
+        "mes": "Enero",
+        "numero_mes": 1,
+        "programa_mensual": "Ruta Segura",
+        "contexto": "Inicio de año, recambio de veraneantes.",
+        "actividades": [
+          { "id": "ene_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%", "justificacion": "Presencia nocturna diaria según Propósito 3.3." },
+          { "id": "ene_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%", "justificacion": "Aumento presencia inspectores en zonas residenciales." },
+          { "id": "ene_02b", "institucion": "dspm", "proposito": "1.0", "nombre": "Gestión Red de Autocuidado Vecinal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "100%", "justificacion": "Mantener en funcionamiento grupo WhatsApp #REDAUTOCUIDADO permanentemente. Responsable: DSPM." },
+          { "id": "ene_02c", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-01-08", "2026-01-15", "2026-01-22", "2026-01-29"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos. Meta: ~10 locales/mes." },
+          { "id": "ene_03", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto Sectores Priorizados", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_especializado", "fechas": ["2026-01-10", "2026-01-24"], "frecuencia": "quincenal", "meta": "≥75%", "justificacion": "Control policial focalizado en lugares estratégicos." },
+          { "id": "ene_04", "institucion": "dspm", "proposito": "1.4", "nombre": "Control de Acceso / Identidad", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fechas": ["2026-01-14"], "frecuencia": "puntual", "meta": "≥75%", "justificacion": "Control vehicular en zonas críticas." },
+          { "id": "ene_05", "institucion": "dspm", "proposito": "3.2", "nombre": "Fiscalización Comercio Informal", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fechas": ["2026-01-23"], "frecuencia": "mensual", "meta": "≥80%", "justificacion": "Recuperación de áreas críticas (Propósito 3.2)." },
+          { "id": "ene_06", "institucion": "seguridad_retiro", "proposito": "0.0", "nombre": "Hito Seguridad Regional (Retiro N°1)", "ejecucion": "CONJUNTA", "coordinacion_con": ["seguridad_retiro"], "tipo": "mesa_territorial", "fechas": ["2026-01-20"], "frecuencia": "trimestral", "justificacion": "Coordinación intercomunal de seguridad fronteriza." }
+        ]
+      },
+      {
+        "mes": "Febrero",
+        "numero_mes": 2,
+        "programa_mensual": "Verano en Familia",
+        "contexto": "Semana Parralina, aumento de población.",
+        "actividades": [
+          { "id": "feb_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fecha_rango": "01-28", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "feb_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "horario": "14:00-23:30", "fecha_rango": "01-28", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "feb_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-02-05", "2026-02-12", "2026-02-19", "2026-02-26"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "feb_03", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto Sectores Priorizados", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_especializado", "fechas": ["2026-02-07", "2026-02-21"], "frecuencia": "quincenal", "meta": "≥75%" },
+          { "id": "feb_04", "institucion": "dspm", "proposito": "1.4", "nombre": "Control de Acceso / Identidad", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fechas": ["2026-02-15"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "feb_05", "institucion": "dspm", "proposito": "3.2", "nombre": "Fiscalización Comercio Informal", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fechas": ["2026-02-13"], "frecuencia": "mensual", "meta": "≥80%" },
+          { "id": "feb_06", "institucion": "gendarmeria", "proposito": "0.0", "nombre": "Mesa Gendarmería N°1 (Población Penal)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "mesa_territorial", "fechas": ["2026-02-12"], "frecuencia": "semestral", "justificacion": "Monitoreo de población privada de libertad en edad penal." }
+        ]
+      },
+      {
+        "mes": "Marzo",
+        "numero_mes": 3,
+        "programa_mensual": "Retorno Escolar",
+        "contexto": "Reactivación del sistema escolar, enfoque en seguridad educativa.",
+        "actividades": [
+          { "id": "mar_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "mar_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "mar_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-03-05", "2026-03-12", "2026-03-19", "2026-03-26"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "mar_03", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto Sectores Priorizados", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-03-06", "2026-03-20"], "frecuencia": "quincenal", "meta": "≥75%" },
+          { "id": "mar_04", "institucion": "dspm", "proposito": "1.4", "nombre": "Control de Acceso Escolar", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-03-04"], "frecuencia": "mensual", "meta": "≥75%", "justificacion": "Ordenamiento vial en accesos a establecimientos educacionales." },
+          { "id": "mar_05", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°1", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "slep"], "tipo": "jornada_formativa", "fechas": ["2026-03-18"], "frecuencia": "mensual", "meta": "≥75%", "justificacion": "Charla anual de prevención dirigida a apoderados (Propósito 2.3)." },
+          { "id": "mar_06", "institucion": "slep", "proposito": "0.0", "nombre": "Mesa Técnica SLEP (Entornos Seguros)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "mesa_territorial", "fechas": ["2026-03-24"], "frecuencia": "trimestral", "justificacion": "Coordinación de protocolos de seguridad escolar." }
+        ]
+      },
+      {
+        "mes": "Abril",
+        "numero_mes": 4,
+        "programa_mensual": "Semana Santa Responsable",
+        "contexto": "Período festivo, aumento de abigeato.",
+        "actividades": [
+          { "id": "abr_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "abr_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "abr_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-04-02", "2026-04-09", "2026-04-16", "2026-04-23", "2026-04-30"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "abr_03", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto Sectores Priorizados", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-04-11", "2026-04-25"], "frecuencia": "quincenal", "meta": "≥75%" },
+          { "id": "abr_04", "institucion": "sag", "proposito": "3.4", "nombre": "Operativo Abigeato N°1", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "carabineros"], "tipo": "operativo_especializado", "fechas": ["2026-04-01"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Control fiscal de fauna (Propósito 3.4 - 6 operativos semestralizados)." },
+          { "id": "abr_05", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°1", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "tipo": "mesa_territorial", "fechas": ["2026-04-16"], "frecuencia": "mensual", "meta": "≥75%", "justificacion": "Mesa participativa prevención (Propósito 2.1 - 8 anuales)." },
+          { "id": "abr_06", "institucion": "pdi", "proposito": "0.0", "nombre": "Fiscalización Laboral Agrícola (PDI)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "operativo_especializado", "fechas": ["2026-04-14"], "frecuencia": "puntual", "justificacion": "Control migratorio y explotación laboral en temporadas agrícolas." }
+        ]
+      },
+      {
+        "mes": "Mayo",
+        "numero_mes": 5,
+        "programa_mensual": "Barrio Comercial Alerta",
+        "contexto": "Día de la Madre, actividades comerciales intensas.",
+        "actividades": [
+          { "id": "may_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "may_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "may_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-05-07", "2026-05-14", "2026-05-21", "2026-05-28"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "may_03", "institucion": "dspm", "proposito": "3.2", "nombre": "Control Especial Día de la Madre (Comercio)", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-05-09"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Refuerzo en zonas comerciales en fechas críticas." },
+          { "id": "may_04", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°2", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "fechas": ["2026-05-20"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "may_05", "institucion": "oln", "proposito": "0.0", "nombre": "Intervención Plazas/Vulneraciones (OLN)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "mesa_territorial", "fechas": ["2026-05-12"], "frecuencia": "puntual", "justificacion": "Actividades de protección infantil en espacios públicos." }
+        ]
+      },
+      {
+        "mes": "Junio",
+        "numero_mes": 6,
+        "programa_mensual": "Invierno Seguro",
+        "contexto": "Análisis semestral de riesgos, evaluación de factores.",
+        "actividades": [
+          { "id": "jun_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "jun_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "jun_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-06-04", "2026-06-11", "2026-06-18", "2026-06-25"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "jun_03", "institucion": "carabineros", "proposito": "2.2", "nombre": "Levantamiento Factores de Riesgo (Oficio Carabineros)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "operativo_especializado", "fechas": ["2026-06-10"], "frecuencia": "anual", "meta": "100%", "justificacion": "Informe oficial Carabineros sobre factores de riesgo (Propósito 2.2)." },
+          { "id": "jun_04", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°2", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-06-11"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "jun_05", "institucion": "gendarmeria", "proposito": "0.0", "nombre": "Mesa Gendarmería N°2 (Seguridad Perimetral)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "mesa_territorial", "fechas": ["2026-06-17"], "frecuencia": "semestral", "justificacion": "Coordinación seguridad alrededor de establecimiento penitenciario." }
+        ]
+      },
+      {
+        "mes": "Julio",
+        "numero_mes": 7,
+        "programa_mensual": "Vacaciones: Cero Drogas",
+        "contexto": "Vacaciones escolares, enfoque preventivo.",
+        "actividades": [
+          { "id": "jul_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "jul_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "jul_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-07-02", "2026-07-09", "2026-07-16", "2026-07-23", "2026-07-30"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "jul_03", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°3", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-07-16"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "jul_04", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°3", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "fechas": ["2026-07-22"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "jul_05", "institucion": "seguridad_retiro", "proposito": "0.0", "nombre": "Hito Regional: Operativo Rural (Retiro)", "ejecucion": "CONJUNTA", "coordinacion_con": ["seguridad_retiro"], "tipo": "mesa_territorial", "fechas": ["2026-07-07"], "frecuencia": "trimestral", "justificacion": "Coordinación de seguridad en sectores rurales." }
+        ]
+      },
+      {
+        "mes": "Agosto",
+        "numero_mes": 8,
+        "programa_mensual": "Parral Te Cuida",
+        "contexto": "Mes de la Niñez, enfoque en seguridad infantil.",
+        "actividades": [
+          { "id": "ago_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "ago_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "ago_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-08-06", "2026-08-13", "2026-08-20", "2026-08-27"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "ago_03", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Especial Comercio (Día del Niño)", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-08-09"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Control de seguridad en establecimientos y espacios infantiles." },
+          { "id": "ago_04", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°4", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-08-20"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "ago_05", "institucion": "oln", "proposito": "0.0", "nombre": "Seguridad Escolar / Mes de la Niñez (OLN)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "slep"], "tipo": "operativo_especializado", "fechas": ["2026-08-11"], "frecuencia": "puntual", "justificacion": "Jornadas de seguridad y prevención en entornos educativos." }
+        ]
+      },
+      {
+        "mes": "Septiembre",
+        "numero_mes": 9,
+        "programa_mensual": "¡Viva Parral Seguro!",
+        "contexto": "Fiestas Patrias, operativos de contención intensificados.",
+        "actividades": [
+          { "id": "sep_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas (Reforzadas)", "ejecucion": "CONJUNTA", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "sep_02", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto (Fiestas Patrias)", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-09-12", "2026-09-20"], "frecuencia": "puntual", "meta": "≥75%", "justificacion": "Control intensificado durante festividades." },
+          { "id": "sep_03", "institucion": "sag", "proposito": "3.4", "nombre": "Operativo Abigeato N°2 y N°3", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "carabineros"], "fechas": ["2026-09-07", "2026-09-14"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Doble operativo SAG por temporada de riesgos." },
+          { "id": "sep_04", "institucion": "pdi", "proposito": "0.0", "nombre": "Operativo Receptación (PDI)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "operativo_especializado", "fechas": ["2026-09-02"], "frecuencia": "puntual", "justificacion": "Control de comercio de bienes robados." },
+          { "id": "sep_05", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°5", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-09-24"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "sep_06", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°4", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "fechas": ["2026-09-09"], "frecuencia": "mensual", "meta": "≥75%" }
+        ]
+      },
+      {
+        "mes": "Octubre",
+        "numero_mes": 10,
+        "programa_mensual": "Cosecha Segura",
+        "contexto": "Temporada de cosecha, operativos rurales intensificados.",
+        "actividades": [
+          { "id": "oct_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "oct_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "oct_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-10-01", "2026-10-08", "2026-10-15", "2026-10-22", "2026-10-29"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "oct_03", "institucion": "dspm", "proposito": "1.3", "nombre": "Rondas Alto Impacto (Rutas Agrícolas)", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "fechas": ["2026-10-09", "2026-10-23"], "frecuencia": "quincenal", "meta": "≥75%", "justificacion": "Seguridad en rutas de transporte agrícola." },
+          { "id": "oct_04", "institucion": "sag", "proposito": "3.4", "nombre": "Operativo Abigeato N°4", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "carabineros"], "fechas": ["2026-10-07"], "frecuencia": "puntual", "meta": "≥80%" },
+          { "id": "oct_05", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°6", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-10-22"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "oct_06", "institucion": "slep", "proposito": "0.0", "nombre": "Jornada Prevención Violencia y Mediación Escolar (SLEP)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "tipo": "jornada_formativa", "fechas": ["2026-10-15"], "frecuencia": "puntual", "justificacion": "Capacitación preventiva en establecimientos educacionales." }
+        ]
+      },
+      {
+        "mes": "Noviembre",
+        "numero_mes": 11,
+        "programa_mensual": "Barrio sin Riesgos",
+        "contexto": "Evaluación de semestre 2, últimos operativos del año.",
+        "actividades": [
+          { "id": "nov_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas", "ejecucion": "CONJUNTA", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "nov_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-30", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "nov_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-11-05", "2026-11-12", "2026-11-19", "2026-11-26"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "nov_03", "institucion": "dspm", "proposito": "1.4", "nombre": "Control Cementerios", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-11-01"], "frecuencia": "puntual", "meta": "≥75%", "justificacion": "Ordenamiento vial en festividades de aniversarios familiares." },
+          { "id": "nov_04", "institucion": "sag", "proposito": "3.4", "nombre": "Operativo Abigeato N°5", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "carabineros"], "fechas": ["2026-11-04"], "frecuencia": "puntual", "meta": "≥80%" },
+          { "id": "nov_05", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°7", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-11-19"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "nov_06", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°5 y N°6", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "fechas": ["2026-11-11", "2026-11-25"], "frecuencia": "mensual", "meta": "≥75%", "justificacion": "Doble charla para completar cobertura anual." }
+        ]
+      },
+      {
+        "mes": "Diciembre",
+        "numero_mes": 12,
+        "programa_mensual": "Navidad y Fin de Año",
+        "contexto": "Fin de año masivo, últimos operativos del ciclo.",
+        "actividades": [
+          { "id": "dic_01", "institucion": "carabineros", "proposito": "3.3", "nombre": "Rondas Nocturnas Patrullas Mixtas (Intensificadas)", "ejecucion": "CONJUNTA", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "dic_02", "institucion": "dspm", "proposito": "1.1", "nombre": "Rondas Fiscalización Sectores Residenciales", "ejecucion": "SOLO", "horario": "14:00-23:30", "fecha_rango": "01-31", "frecuencia": "diaria", "meta": "≥75%" },
+          { "id": "dic_02b", "institucion": "dspm", "proposito": "3.1", "nombre": "Fiscalización Comercio Formal", "ejecucion": "SOLO", "tipo": "operativo_autonomo", "fechas": ["2026-12-03", "2026-12-10", "2026-12-17"], "frecuencia": "semanal", "meta": "≥100%", "justificacion": "Visitas a locales comerciales legales para entregar recomendaciones de autocuidado y detectar riesgos." },
+          { "id": "dic_03", "institucion": "dspm", "proposito": "3.2", "nombre": "Plan Navidad Segura (Comercio)", "ejecucion": "CONJUNTA", "coordinacion_con": ["carabineros"], "tipo": "operativo_intersectorial", "fechas": ["2026-12-22", "2026-12-23"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Operativo especial en zonas comerciales para Navidad." },
+          { "id": "dic_04", "institucion": "sag", "proposito": "3.4", "nombre": "Operativo Abigeato N°6", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "carabineros"], "fechas": ["2026-12-02"], "frecuencia": "puntual", "meta": "≥80%", "justificacion": "Último operativo SAG del año." },
+          { "id": "dic_05", "institucion": "senda", "proposito": "2.1", "nombre": "Mesa Territorial SENDA N°8", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm", "ccsp"], "fechas": ["2026-12-16"], "frecuencia": "mensual", "meta": "≥75%" },
+          { "id": "dic_06", "institucion": "senda", "proposito": "2.3", "nombre": "Charla Prevención Drogas N°7 a N°12 (Cierre Anual)", "ejecucion": "CONJUNTA", "coordinacion_con": ["dspm"], "fechas": ["2026-12-09"], "frecuencia": "mensual", "meta": "≥75%", "justificacion": "Charlas concentradas para completar meta anual de 12." }
+        ]
+      }
+    ]
+  }
+}

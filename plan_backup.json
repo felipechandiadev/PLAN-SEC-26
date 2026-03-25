@@ -1,0 +1,440 @@
+{
+  "arquitectura_desarrollo": {
+    "proyecto": "Parral Seguro 2026 - Matriz Operativa",
+    "tipo": "SPA (Single Page Application) con Vite + Vanilla JS",
+    "objetivo": "Visualizar planificación anual con múltiples vistas (Gantt, Calendario, Detalles)",
+    
+    "structure_carpetas": {
+      "src/": {
+        "components/": {
+          "descripcion": "Componentes reutilizables",
+          "archivos": [
+            "Header.js - Encabezado con branding PSP",
+            "Legend.js - Leyenda de colores y estamentos",
+            "Navigation.js - Barra de navegación entre vistas",
+            "DateBadge.js - Badge de fecha con color de institución",
+            "JustificationBox.js - Caja de justificación técnica"
+          ]
+        },
+        "views/": {
+          "descripcion": "Vistas principales de la aplicación",
+          "archivos": [
+            "MatrizGanttView.js - Vista principal (Matriz anual integrada)",
+            "CalendarioMesView.js - Vista calendario por mes",
+            "DetallesOperativoView.js - Detalles de operativo específico",
+            "DashboardView.js - Panel de control / resumen anual"
+          ]
+        },
+        "data/": {
+          "descripcion": "Datos y estructuras",
+          "archivos": [
+            "operativos.js - Array de actividades/operativos",
+            "meses.js - Configuración de meses y programas",
+            "instituciones.js - Mapa de instituciones y colores",
+            "constantes.js - URLs, constantes globales"
+          ]
+        },
+        "styles/": {
+          "descripcion": "Estilos globales y variables",
+          "archivos": [
+            "main.css - Estilos globales",
+            "gantt.css - Estilos específicos para matriz",
+            "calendar.css - Estilos para calendario",
+            "variables.css - Variables CSS compartidas"
+          ]
+        },
+        "utils/": {
+          "descripcion": "Funciones y utilidades",
+          "archivos": [
+            "router.js - Sistema de enrutamiento simple",
+            "dateUtils.js - Manipulación de fechas",
+            "colorMap.js - Mapeo de instituciones a colores",
+            "dataTransform.js - Transformación de datos para vistas"
+          ]
+        },
+        "archivos_raiz": [
+          "main.js - Punto de entrada",
+          "App.js - Componente aplicación principal"
+        ]
+      }
+    },
+
+    "rutas_planificadas": {
+      "/": "Vista Principal - Matriz Gantt Operativa Anual",
+      "/calendario/:mes": "Vista Calendario Mensual (ej: /calendario/enero)",
+      "/operativo/:id": "Detalle de un operativo específico",
+      "/dashboard": "Resumen ejecutivo anual",
+      "/estadisticas": "Análisis y reportes (futuro)"
+    },
+
+    "caracteristicas_principales": {
+      "vista_1_matriz_gantt": {
+        "nombre": "PLANIFICACIÓN ANUAL DIRECCIÓN DE SEGURIDAD PÚBLICA MUNICIPAL",
+        "descripcion": "Visualización horizontal de planificación anual",
+        "componentes": [
+          "Encabezado con branding PSP",
+          "Leyenda de 7 estamentos (colores)",
+          "Tabla con 12 columnas (meses)",
+          "Filas de operativos",
+          "Celdas con fechas específicas y justificación técnica",
+          "Empty cells con patrón punteado"
+        ],
+        "datos_dinámicos": [
+          "12 meses con programa asociado",
+          "6+ operativos/actividades",
+          "Fechas específicas por mes con notas",
+          "Continuidad ('Diario') con explicación"
+        ]
+      },
+      
+      "vista_2_calendario_mensual": {
+        "nombre": "Calendario por Mes",
+        "descripcion": "Visualización tipo calendario del mes seleccionado",
+        "componentes": [
+          "Selector/navegación de mes",
+          "Grilla 7x5+ (días semana x semanas)",
+          "Celdas con día del mes",
+          "Filtrado de operativos para ese mes",
+          "Indicadores visuales por institución"
+        ],
+        "funcionalidad": [
+          "Click en día muestra operativos",
+          "Navegación prev/next mes",
+          "Resaltado de hoy"
+        ]
+      },
+
+      "vista_3_detalles": {
+        "nombre": "Detalles de Operativo",
+        "descripcion": "Panel con info completa de un operativo",
+        "campos": [
+          "Nombre operativo",
+          "Institución responsable",
+          "Color institución",
+          "Fechas de ejecución",
+          "Justificación técnica completa",
+          "Contexto territorial"
+        ]
+      },
+
+      "vista_4_dashboard": {
+        "nombre": "Dashboard Ejecutivo",
+        "descripcion": "Resumen visual anual",
+        "elementos": [
+          "Total operativos por mes",
+          "Distribución por institución",
+          "Heatmap: intensidad de actividades",
+          "KPIs: días operativos, meses cubiertos",
+          "Gráficos simples"
+        ]
+      }
+    },
+
+    "manejo_estado": {
+      "metodo": "Store simple (sin frameworks)",
+      "datos_globales": [
+        "Mes seleccionado actual",
+        "Vista activa (gantt / calendario / detalles)",
+        "Operativo seleccionado (null o ID)",
+        "Configuración (idioma, tema)"
+      ],
+      "actualizacion": "Observadores locales (pub/sub pattern) o prop drilling"
+    },
+
+    "estilos_sistemas": {
+      "framework_css": "Tailwind CSS (CDN importado en index.html)",
+      "css_custom": {
+        "variables_raiz": [
+          "--primary: #1e40af (Azul oscuro)",
+          "--secondary: #3b82f6 (Azul medio)",
+          "--accent: #f59e0b (Ámbar)"
+        ],
+        "composicion": "CSS custom + Tailwind utilities"
+      },
+      "colores_instituciones": {
+        "azul_600": "Municipalidad / Carabineros base",
+        "amber_500": "Carabineros operativos",
+        "green_500": "SENDA",
+        "red_600": "SAG (Abigeato)",
+        "indigo_600": "Intersectorial / PDI",
+        "purple_600": "SLEP",
+        "pink_500": "Niñez/OLN"
+      }
+    },
+
+    "componentes_reutilizables": {
+      "Header": {
+        "props": ["titulo", "subtitulo", "logoText"],
+        "ejemplo": "Encabezado con PSP + título + estado validación"
+      },
+      "Legend": {
+        "props": ["instituciones"],
+        "ejemplo": "7 filas con color + nombre estamento"
+      },
+      "DateBadge": {
+        "props": ["date", "institucionColor"],
+        "ejemplo": "pequeño círculo/cuadrado con número"
+      },
+      "JustificationBox": {
+        "props": ["texto"],
+        "ejemplo": "Caja amarillenta con contexto de decisión"
+      },
+      "MonthHeader": {
+        "props": ["mesNombre", "programa"],
+        "ejemplo": "Encabezado columna con mes + programa"
+      },
+      "Navigation": {
+        "props": ["currentView", "onNavigate"],
+        "ejemplo": "Barra con botones: Matriz, Calendario, Dashboard"
+      }
+    },
+
+    "flujo_desarrollo_fase_1": [
+      "1. Refactorizar HTML/CSS a componentes JS modulares",
+      "2. Crear sistema de enrutamiento simple",
+      "3. Implementar vista Matriz Gantt (copiar HTML original)",
+      "4. Crear estructura de datos centralizada (operativos.js)",
+      "5. Implementar componentes Header, Legend, Navigation",
+      "6. Validar que matriz funcione con datos dinámicos"
+    ],
+
+    "flujo_desarrollo_fase_2": [
+      "7. Crear CalendarioMesView.js con grilla día x semana",
+      "8. Implementar navegación mes anterior/siguiente",
+      "9. Filtrar operativos por mes en calendario",
+      "10. Crear vista DetallesOperativoView.js",
+      "11. Enlazar clicks entre vistas"
+    ],
+
+    "flujo_desarrollo_fase_3": [
+      "12. Crear DashboardView.js con estadísticas",
+      "13. Implementar gráficos simples (Chart.js o vanilla)",
+      "14. Refinar estilos responsivos",
+      "15. Testing en diferentes resoluciones"
+    ]
+  },
+
+  "planificacion_anual": {
+    "nombre_proyecto": "Parral Seguro 2026",
+    "comuna": "Parral",
+    "direccion": "Dirección de Seguridad",
+    "nota_ejecutantes": "Todas las actividades son coordinadas por la Dirección de Seguridad Pública (DSPM). Los operativos recurrentes son ejecutados directamente por DSPM. Los hitos institucionales son coordinados por DSPM con participación de otras instituciones del territorio.",
+    "calendario": [
+      {
+        "mes": "Enero",
+        "programa": "Ruta Segura",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": {
+            "frecuencia": "Diarios (1 al 31)",
+            "ejecutor": "DSPM",
+            "tipo": "operativo_directo"
+          },
+          "control_acceso": {
+            "fechas": ["2026-01-14"],
+            "ejecutor": "DSPM / Carabineros",
+            "tipo": "operativo_coordinado"
+          },
+          "comercio_informal": {
+            "fechas": ["2026-01-23"],
+            "ejecutor": "Inspectores Municipales",
+            "tipo": "operativo_coordinado"
+          },
+          "rondas_alto_impacto": {
+            "fechas": ["2026-01-10", "2026-01-24"],
+            "ejecutor": "DSPM / Carabineros",
+            "tipo": "operativo_coordinado"
+          }
+        },
+        "actividades_coordinadas": [
+          {
+            "institucion": "Seguridad Regional",
+            "coordinador": "DSPM",
+            "fecha": "2026-01-20",
+            "descripcion": "Seguridad Retiro N°1: Planificación fronteras",
+            "tipo": "intersectorial"
+          }
+        ]
+      },
+      {
+        "mes": "Febrero",
+        "programa": "Verano en Familia",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 28)",
+          "control_acceso": ["2026-02-15"],
+          "comercio_informal": ["2026-02-13"],
+          "rondas_alto_impacto": ["2026-02-07", "2026-02-21"]
+        },
+        "hitos_institucionales": [
+          {
+            "institucion": "Gendarmería",
+            "fecha": "2026-02-12",
+            "descripcion": "Mesa N°1: Info población penal en libertad"
+          }
+        ]
+      },
+      {
+        "mes": "Marzo",
+        "programa": "Retorno Escolar",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-03-04"],
+          "comercio_informal": ["2026-03-05"],
+          "rondas_alto_impacto": ["2026-03-06", "2026-03-20"]
+        },
+        "hitos_institucionales": [
+          {
+            "institucion": "SENDA",
+            "fecha": "2026-03-18",
+            "descripcion": "Charla Ley de Drogas N°1"
+          },
+          {
+            "institucion": "SLEP",
+            "fecha": "2026-03-24",
+            "descripcion": "Mesa Técnica Intersectorial: Coordinación entornos escolares y protocolos"
+          }
+        ]
+      },
+      {
+        "mes": "Abril",
+        "programa": "Semana Santa Responsable",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 30)",
+          "control_acceso": ["2026-04-02"],
+          "comercio_informal": ["2026-04-03"],
+          "rondas_alto_impacto": ["2026-04-11", "2026-04-25"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SAG", "fecha": "2026-04-01", "descripcion": "Abigeato N°1" },
+          { "institucion": "SENDA", "fecha": "2026-04-16", "descripcion": "Mesa Territorial N°1" },
+          { "institucion": "SENDA", "fecha": "2026-04-23", "descripcion": "Charla N°2" },
+          { "institucion": "PDI", "fecha": "2026-04-14", "descripcion": "Extranjería: Fiscalización laboral agrícola" }
+        ]
+      },
+      {
+        "mes": "Mayo",
+        "programa": "Barrio Comercial Alerta",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-05-08"],
+          "comercio_informal": ["2026-05-09"],
+          "rondas_alto_impacto": ["2026-05-15", "2026-05-29"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SENDA", "fecha": "2026-05-14", "descripcion": "Mesa Territorial N°2" },
+          { "institucion": "SENDA", "fecha": "2026-05-20", "descripcion": "Charla N°3" },
+          { "institucion": "OLN (Niñez)", "fecha": "2026-05-12", "descripcion": "Propuesta N°1: Intervención en plazas/vulneraciones" }
+        ]
+      },
+      {
+        "mes": "Junio",
+        "programa": "Invierno Seguro",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 30)",
+          "control_acceso": ["2026-06-16"],
+          "comercio_informal": ["2026-06-24"],
+          "rondas_alto_impacto": ["2026-06-13", "2026-06-27"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "CARABINEROS", "fecha": "2026-06-10", "descripcion": "Levantamiento Factores de Riesgo" },
+          { "institucion": "SENDA", "fecha": "2026-06-11", "descripcion": "Mesa Territorial N°3" },
+          { "institucion": "SENDA", "fecha": "2026-06-23", "descripcion": "Charla N°4" },
+          { "institucion": "Gendarmería", "fecha": "2026-06-17", "descripcion": "Mesa N°2: Seguridad perimetral" }
+        ]
+      },
+      {
+        "mes": "Julio",
+        "programa": "Vacaciones: Cero Drogas",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-07-10"],
+          "comercio_informal": ["2026-07-15"],
+          "rondas_alto_impacto": ["2026-07-11", "2026-07-25"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SENDA", "fecha": "2026-07-16", "descripcion": "Mesa Territorial N°4" },
+          { "institucion": "SENDA", "fecha": "2026-07-22", "descripcion": "Charla N°5" },
+          { "institucion": "Seguridad Regional", "fecha": "2026-07-07", "descripcion": "Seguridad Retiro N°3: Operativo Rural" }
+        ]
+      },
+      {
+        "mes": "Agosto",
+        "programa": "Parral Te Cuida",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-08-14"],
+          "comercio_informal": ["2026-08-09"],
+          "rondas_alto_impacto": ["2026-08-07", "2026-08-21"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SENDA", "fecha": "2026-08-20", "descripcion": "Mesa Territorial N°5" },
+          { "institucion": "SENDA", "fecha": "2026-08-12", "descripcion": "Charla N°6" },
+          { "institucion": "OLN (Niñez)", "fecha": "2026-08-11", "descripcion": "Propuesta N°2: Seguridad escolar Mes de la Niñez" }
+        ]
+      },
+      {
+        "mes": "Septiembre",
+        "programa": "¡Viva Parral Seguro!",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 30)",
+          "control_acceso": ["2026-09-17"],
+          "comercio_informal": ["2026-09-18"],
+          "rondas_alto_impacto": ["2026-09-12", "2026-09-20"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SAG", "fecha": "2026-09-07", "descripcion": "Abigeato N°2" },
+          { "institucion": "SAG", "fecha": "2026-09-14", "descripcion": "Abigeato N°3" },
+          { "institucion": "SENDA", "fecha": "2026-09-24", "descripcion": "Mesa Territorial N°6" },
+          { "institucion": "SENDA", "fecha": "2026-09-09", "descripcion": "Charla N°7" },
+          { "institucion": "PDI", "fecha": "2026-09-02", "descripcion": "Delitos Comerciales: Receptación" }
+        ]
+      },
+      {
+        "mes": "Octubre",
+        "programa": "Cosecha Segura",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-10-14"],
+          "comercio_informal": ["2026-10-30"],
+          "rondas_alto_impacto": ["2026-10-09", "2026-10-23"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SAG", "fecha": "2026-10-07", "descripcion": "Abigeato N°4" },
+          { "institucion": "SENDA", "fecha": "2026-10-22", "descripcion": "Mesa Territorial N°7" },
+          { "institucion": "SENDA", "fecha": "2026-10-21", "descripcion": "Charla N°8" },
+          { "institucion": "SLEP", "fecha": "2026-10-15", "descripcion": "Jornada Formativa: Prevención violencia y mediación escolar" }
+        ]
+      },
+      {
+        "mes": "Noviembre",
+        "programa": "Barrio sin Riesgos",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 30)",
+          "control_acceso": ["2026-11-01"],
+          "comercio_informal": ["2026-11-14"],
+          "rondas_alto_impacto": ["2026-11-06", "2026-11-20"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SAG", "fecha": "2026-11-04", "descripcion": "Abigeato N°5" },
+          { "institucion": "SENDA", "fecha": "2026-11-19", "descripcion": "Mesa Territorial N°8" },
+          { "institucion": "SENDA", "fecha": "2026-11-11", "descripcion": "Charla N°9" },
+          { "institucion": "SENDA", "fecha": "2026-11-25", "descripcion": "Charla N°10" }
+        ]
+      },
+      {
+        "mes": "Diciembre",
+        "programa": "Navidad y Fin de Año",
+        "operativos_recurrentes": {
+          "patrullajes_mixtos": "Diarios (1 al 31)",
+          "control_acceso": ["2026-12-30"],
+          "comercio_informal": ["2026-12-22", "2026-12-23"],
+          "rondas_alto_impacto": ["2026-12-12", "2026-12-19"]
+        },
+        "hitos_institucionales": [
+          { "institucion": "SAG", "fecha": "2026-12-02", "descripcion": "Abigeato N°6" },
+          { "institucion": "SENDA", "fecha": "2026-12-09", "descripcion": "Charla N°11" },
+          { "institucion": "SENDA", "fecha": "2026-12-16", "descripcion": "Charla N°12" }
+        ]
+      }
+    ]
+  }
+}

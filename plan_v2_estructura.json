@@ -1,0 +1,195 @@
+{
+  "planificacion_anual": {
+    "nombre_proyecto": "Parral Seguro 2026",
+    "comuna": "Parral",
+    "direccion": "Dirección de Seguridad Pública (DSPM)",
+    "descripcion_general": "Plan integrado de seguridad territorial coordinado por DSPM con participación intersectorial de instituciones locales. Estructura jerárquica: Mes → Institución → Actividades específicas",
+    
+    "instituciones": {
+      "dspm": {
+        "nombre": "Dirección de Seguridad Pública Municipal",
+        "sigla": "DSPM",
+        "rol": "Coordinadora / Ejecutora",
+        "color": "bg-blue-600",
+        "tipo_institucion": "Municipal"
+      },
+      "carabineros": {
+        "nombre": "Carabineros de Chile",
+        "sigla": "CARAB",
+        "rol": "Ejecutora / Coordinadora",
+        "color": "bg-green-500",
+        "tipo_institucion": "Estatal"
+      },
+      "senda": {
+        "nombre": "Servicio Nacional para la Prevención y Rehabilitación del Consumo de Drogas",
+        "sigla": "SENDA",
+        "rol": "Especialista",
+        "color": "bg-amber-500",
+        "tipo_institucion": "Estatal"
+      },
+      "sag": {
+        "nombre": "Servicio Agrícola y Ganadero",
+        "sigla": "SAG",
+        "rol": "Especialista",
+        "color": "bg-red-600",
+        "tipo_institucion": "Estatal"
+      },
+      "slep": {
+        "nombre": "Servicio Local de Educación Pública Maule Valle",
+        "sigla": "SLEP",
+        "rol": "Coordinadora",
+        "color": "bg-purple-600",
+        "tipo_institucion": "Estatal"
+      },
+      "pdi": {
+        "nombre": "Policía de Investigaciones de Chile",
+        "sigla": "PDI",
+        "rol": "Especialista",
+        "color": "bg-indigo-600",
+        "tipo_institucion": "Estatal"
+      },
+      "municipalidad": {
+        "nombre": "Municipalidad de Parral",
+        "sigla": "MUNIC",
+        "rol": "Coordinadora",
+        "color": "bg-blue-600",
+        "tipo_institucion": "Municipal"
+      }
+    },
+
+    "tipos_actividades": {
+      "operativo_directo": "Ejecutado directamente por la institución sin coordinación externa",
+      "operativo_coordinado": "Ejecutado por la institución con participación/apoyo de otras",
+      "mesa_territorial": "Instancia de coordinación intersectorial",
+      "jornada_formativa": "Actividad educativa/formativa",
+      "especial": "Operativo puntual o interventivo"
+    },
+
+    "calendario": [
+      {
+        "mes": "Enero",
+        "numero_mes": 1,
+        "programa_mensual": "Ruta Segura",
+        "contexto": "Inicio de año, retorno de vacaciones, aumento de tránsito",
+        
+        "actividades_por_institucion": {
+          "dspm": {
+            "nombre_institucion": "Dirección de Seguridad Pública",
+            "actividades": [
+              {
+                "id": "ene_dspm_01",
+                "nombre": "Patrullaje Mixto Nocturno",
+                "tipo": "operativo_directo",
+                "frecuencia": "Diario",
+                "fechas_especificas": [],
+                "descripcion": "Patrullajes coordinados en sectores de mayor incidencia",
+                "zonas_cobertura": ["Centro", "Barrio Comercial", "Sectores periféricos"],
+                "responsable": "DSPM",
+                "recursos": "Personal DSPM + Carabineros (apoyo)",
+                "indicador": "Horas patrulladas"
+              },
+              {
+                "id": "ene_dspm_02",
+                "nombre": "Rondas Alto Impacto",
+                "tipo": "operativo_coordinado",
+                "frecuencia": "Específicas",
+                "fechas_especificas": ["2026-01-10", "2026-01-24"],
+                "descripcion": "Operativos de presencia mayoritaria en zonas críticas",
+                "zonas_cobertura": ["Centro", "Zona Comercial"],
+                "responsable": "DSPM",
+                "coordinacion_con": ["Carabineros de Chile"],
+                "recursos": "Personal DSPM + Carabineros",
+                "indicador": "Operativos ejecutados"
+              }
+            ]
+          },
+          
+          "municipalidad": {
+            "nombre_institucion": "Municipalidad de Parral",
+            "actividades": [
+              {
+                "id": "ene_munic_01",
+                "nombre": "Fiscalización Comercio Informal",
+                "tipo": "operativo_coordinado",
+                "frecuencia": "Específicas",
+                "fechas_especificas": ["2026-01-23"],
+                "descripcion": "Control de comercio informal en zonas de alta concentración",
+                "zonas_cobertura": ["Zona Comercial Centro"],
+                "responsable": "Inspectores Municipales",
+                "coordinacion_con": ["DSPM"],
+                "recursos": "Inspectores Municipales + DSPM",
+                "indicador": "Comercios fiscalizados"
+              },
+              {
+                "id": "ene_munic_02",
+                "nombre": "Control de Acceso / Identidad",
+                "tipo": "operativo_coordinado",
+                "frecuencia": "Específicas",
+                "fechas_especificas": ["2026-01-14"],
+                "descripcion": "Control de personas/identidad en sectores críticos",
+                "zonas_cobertura": ["Puntos de flujo alto"],
+                "responsable": "DSPM",
+                "coordinacion_con": ["Carabineros de Chile"],
+                "recursos": "Personal DSPM + Carabineros",
+                "indicador": "Personas identificadas"
+              }
+            ]
+          },
+
+          "carabineros": {
+            "nombre_institucion": "Carabineros de Chile",
+            "actividades": [
+              {
+                "id": "ene_carab_01",
+                "nombre": "Apoyo a Operativos DSPM",
+                "tipo": "operativo_coordinado",
+                "frecuencia": "Según requerimiento",
+                "fechas_especificas": [],
+                "descripcion": "Participación en operativos coordinados con DSPM",
+                "zonas_cobertura": ["Comuna Parral"],
+                "responsable": "Carabineros de Chile",
+                "coordinacion_con": ["DSPM"],
+                "recursos": "Efectivos de Carabineros",
+                "indicador": "Operativos apoyados"
+              }
+            ]
+          },
+
+          "regional": {
+            "nombre_institucion": "Seguridad Regional",
+            "actividades": [
+              {
+                "id": "ene_regional_01",
+                "nombre": "Seguridad Retiro N°1",
+                "tipo": "mesa_territorial",
+                "frecuencia": "Una vez",
+                "fechas_especificas": ["2026-01-20"],
+                "descripcion": "Planificación de coordinación en materias fronterizas y seguridad regional",
+                "zonas_cobertura": ["Nivel Regional"],
+                "responsable": "Seguridad Regional",
+                "coordinacion_con": ["DSPM", "Carabineros", "PDI"],
+                "recursos": "Autoridades regionales",
+                "indicador": "Acuerdos alcanzados"
+              }
+            ]
+          }
+        },
+
+        "resumen_mes": {
+          "total_actividades": 7,
+          "instituciones_participantes": ["DSPM", "Municipalidad", "Carabineros", "Seguridad Regional"],
+          "operativos_directos": 1,
+          "operativos_coordinados": 4,
+          "instancias_coordinacion": 1
+        }
+      }
+    ],
+
+    "notas_metodologicas": {
+      "jerarquia_datos": "planificacion_anual → calendario (mes) → actividades_por_institucion → cada_institucion_lista_actividades",
+      "responsabilidades": "DSPM coordina. Cada institución especifica sus aportes. Todas las actividades vinculadas a DSPM como coordinadora",
+      "tipos_actividades": "Directo (ejecuta solo), Coordinado (ejecuta con otros), Mesa (coordinación), Formativa (educativa), Especial (puntual)",
+      "identificadores": "Formato: [mes_codigo]_[institucion_codigo]_[numero_correlativo] (ej: ene_dspm_01)"
+    }
+  }
+}
