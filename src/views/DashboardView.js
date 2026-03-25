@@ -103,11 +103,12 @@ function extractAndAnalyzeActivities(plan) {
     actividadesMap.forEach((dato, nombre) => {
         totalActividadesUnicas++;
         
-        // Contar por tipo
-        if (!categoriasPorTipo[dato.tipo]) {
-            categoriasPorTipo[dato.tipo] = 0;
+        // Contar por categoría / tipo (incluye categorías explícitas si existen)
+        const tipoClave = dato.categoria || dato.tipo || 'sin_categorizar';
+        if (!categoriasPorTipo[tipoClave]) {
+            categoriasPorTipo[tipoClave] = 0;
         }
-        categoriasPorTipo[dato.tipo]++;
+        categoriasPorTipo[tipoClave]++;
         
         // Contar por institución
         dato.instituciones.forEach(inst => {
