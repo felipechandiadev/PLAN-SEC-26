@@ -244,6 +244,118 @@ function handlePrint(meses, operativos) {
     }, 100);
 }
 
+function createMobileGanttView(meses, operativos) {
+    const container = document.createElement('div');
+    container.id = 'gantt-mobile-view';
+    container.className = 'bg-white rounded-xl shadow-xl border border-slate-200 p-4';
+
+    const title = document.createElement('div');
+    title.className = 'mb-4';
+    title.innerHTML = '<h2 class="text-lg font-bold text-slate-900">Matriz Gantt (Mobile)</h2><p class="text-xs text-slate-500">Vista optimizada para pantalla pequeña.</p>';
+    container.appendChild(title);
+
+    meses.forEach((mes, mesIndex) => {
+        const monthCard = document.createElement('div');
+        monthCard.className = 'mobile-month-card mb-4 p-3 border border-slate-200 rounded-lg bg-slate-50';
+
+        monthCard.innerHTML = `
+            <div class="text-sm font-extrabold text-slate-800 mb-2">${mes.id} <span class="text-[10px] font-medium text-slate-500">${mes.programa || ''}</span></div>
+        `;
+
+        operativos.forEach((institucion, institucionIndex) => {
+            const actividadesDelMes = institucion.actividades?.[mesIndex] || [];
+            if (!actividadesDelMes.length) return;
+
+            const instBlock = document.createElement('div');
+            instBlock.className = 'mobile-institution mb-3';
+
+            const instLabel = document.createElement('div');
+            instLabel.className = 'text-xs font-bold text-slate-700 mb-1';
+            instLabel.textContent = `${institucion.nombre} ${institucion.isDspmRow ? '(' + institucion.ejecucion + ')' : ''}`;
+            instBlock.appendChild(instLabel);
+
+            actividadesDelMes.forEach((actividad) => {
+                const actItem = document.createElement('div');
+                actItem.className = 'mobile-activity mb-2 p-2 rounded border border-slate-200 bg-white';
+
+                // Color de institución (DSPM o institución específica)
+                const getInstitutionColor = () => {
+                    if (institucion.isDspmRow) {
+                        return institucion.ejecucion === 'SOLO' ? '#1d4ed8' : '#7c3aed';
+                    }
+
+                    const institutionName = (institucion.nombre || '').toLowerCase();
+                    const nameColorMap = {
+                        'sag': '#0e7490',
+                        'senda': '#16a34a',
+                        'pdi': '#9333ea',
+                        'carabineros': '#2563eb',
+                        'gendarmeria': '#ea580c',
+                        'dspm': '#1d4ed8',
+                        'mtt': '#f59e0b',
+                        'regional': '#0f172a',
+                        'oln': '#14b8a6',
+                        'ccsp': '#7c3aed'
+                    };
+
+                    for (const key in nameColorMap) {
+                        if (institutionName.includes(key)) {
+                            return nameColorMap[key];
+                        }
+                    }
+
+                    if (institucion.color) {
+                        const colorMapping = {
+                            'bg-blue-500': '#2563eb',
+                            'bg-purple-500': '#8b5cf6',
+                            'bg-green-500': '#22c55e',
+                            'bg-orange-500': '#f97316',
+                            'bg-slate-600': '#475569',
+                        };
+                        if (colorMapping[institucion.color]) {
+                            return colorMapping[institucion.color];
+                        }
+                    }
+
+                    const palette = ['#0284c7', '#9333ea', '#14b8a6', '#f97316', '#22c55e', '#0f172a', '#b91c1c', '#0ea5e9'];
+                    return palette[institucionIndex % palette.length];
+                };
+
+                const institutionColor = getInstitutionColor();
+                actItem.style.borderLeft = `4px solid ${institutionColor}`;
+                actItem.style.backgroundColor = '#fcfcfd';
+
+                const actName = document.createElement('div');
+                actName.className = 'text-xs font-semibold text-slate-800 mb-1';
+                actName.textContent = actividad.nombre || 'Actividad sin nombre';
+                actItem.appendChild(actName);
+
+                const actMeta = document.createElement('div');
+                actMeta.className = 'text-[11px] text-slate-600 leading-tight';
+                const fecha = actividad.fecha_rango || (actividad.diasUnicos ? `Días: ${actividad.diasUnicos.join(', ')}` : 'Fecha: Pendiente');
+                const freq = actividad.frecuencia ? ` • ${actividad.frecuencia}` : '';
+                actMeta.textContent = `${fecha}${freq}`;
+                actItem.appendChild(actMeta);
+
+                if (actividad.justificacion) {
+                    const just = document.createElement('div');
+                    just.className = 'text-[10px] text-slate-600 mt-1 line-clamp-3';
+                    just.textContent = actividad.justificacion;
+                    actItem.appendChild(just);
+                }
+
+                instBlock.appendChild(actItem);
+            });
+
+            monthCard.appendChild(instBlock);
+        });
+
+        container.appendChild(monthCard);
+    });
+
+    return container;
+}
+
 export async function createMatrizGanttView() {
     const container = document.createElement('div');
     container.id = 'gantt-view';
@@ -257,7 +369,13 @@ export async function createMatrizGanttView() {
         container.innerHTML = '<div class="p-6 text-center text-red-600">Error cargando datos del plan</div>';
         return container;
     }
-    
+
+    // Modo true mobile (<= 768px)
+    if (window.innerWidth <= 768) {
+        const mobileView = createMobileGanttView(meses, operativos);
+        return mobileView;
+    }
+
     // Función auxiliar para formatear nombres de coordinadores
     const formatCoordinadores = (coordinadores) => {
         if (!coordinadores || coordinadores.length === 0) return '';

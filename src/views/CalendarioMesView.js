@@ -345,16 +345,9 @@ export async function createCalendarioMesView() {
     function createEditModal() {
         const modal = document.createElement('div');
         modal.id = 'edit-actividad-modal';
-        modal.style.position = 'fixed';
-        modal.style.inset = '0';
-        modal.style.display = 'none';
-        modal.style.alignItems = 'flex-start';
-        modal.style.justifyContent = 'center';
-        modal.style.paddingTop = '5%';
-        modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
-        modal.style.zIndex = '9999';
+        modal.className = 'edit-actividad-modal hidden';
         modal.innerHTML = `
-            <div class="bg-white rounded-xl border border-slate-300 shadow-2xl w-11/12 max-w-md p-4 relative" style="max-height: 85vh; overflow-y: auto;">
+            <div class="edit-actividad-modal-content bg-white rounded-xl border border-slate-300 shadow-2xl w-11/12 max-w-md p-4 relative" >
                 <button id="edit-modal-close" class="absolute right-2 top-2 text-slate-500 hover:text-slate-900 font-bold">✕</button>
                 <h3 class="text-lg font-bold text-slate-800 mb-3">Editar Actividad</h3>
                 <form id="edit-actividad-form" class="space-y-3">
@@ -432,7 +425,7 @@ export async function createCalendarioMesView() {
         `;
 
         const closeModal = () => {
-            modal.style.display = 'none';
+            modal.classList.add('hidden');
             document.body.style.overflow = '';
         };
 
@@ -529,7 +522,8 @@ export async function createCalendarioMesView() {
     function openEditModal(data) {
         const modal = document.getElementById('edit-actividad-modal');
         document.body.style.overflow = 'hidden';
-        modal.style.display = 'flex';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
         modal.setAttribute('data-mes-index', data.mesIndex);
         modal.setAttribute('data-dia', data.dia);
         modal.setAttribute('data-institucion', data.institucion?.nombre || 'dspm');

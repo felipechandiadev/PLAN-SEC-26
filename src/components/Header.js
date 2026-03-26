@@ -6,17 +6,18 @@ let headerNavButtons = {};
 
 export function createHeader(onNavigate) {
     const header = document.createElement('div');
-    header.className = 'bg-white rounded-xl shadow-sm p-6 mb-6 border-t-4 border-blue-900';
+    // Altura top bar reducida: padding menor en desktop y móvil
+    header.className = 'bg-white rounded-xl shadow-sm p-3 mb-6 border-t-4 border-blue-900';
     header.innerHTML = `
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-3">
             <!-- PRIMERA FILA: Logo + Título a la izquierda | Referencia a la derecha -->
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <!-- ZONA IZQUIERDA: Logo y Título -->
                 <div class="flex items-center gap-4">
-                    <img src="/logo.png" alt="PSP Logo" class="h-16 w-auto shadow-lg rounded-lg">
+                    <img src="/logo.png" alt="PSP Logo" class="h-16 w-auto shadow-lg rounded-lg" id="header-logo">
                     <div>
-                        <h1 class="text-2xl font-black text-slate-800 uppercase tracking-tight">PLANIFICACIÓN ANUAL</h1>
-                        <h2 class="text-lg font-bold text-slate-600 uppercase">Dirección de Seguridad Pública Municipal</h2>
+                        <h1 class="text-xl font-black text-slate-800 uppercase tracking-tight">PLANIFICACIÓN ANUAL</h1>
+                        <h2 class="text-sm font-bold text-slate-600 uppercase">Dirección de Seguridad Pública Municipal</h2>
                     </div>
                 </div>
             </div>
@@ -36,6 +37,16 @@ export function createHeader(onNavigate) {
         </div>
     `;
     
+    // Ajustar tamaño de botones según dispositivo
+    const isMobile = window.innerWidth <= 768;
+    const navBtnBase = isMobile
+        ? 'nav-btn px-2 py-1 border-2 border-blue-900 text-blue-900 rounded font-bold text-[10px] uppercase transition-all hover:scale-105'
+        : 'nav-btn px-4 py-2 border-2 border-blue-900 text-blue-900 rounded font-bold text-sm uppercase transition-all hover:scale-105';
+
+    header.querySelectorAll('#header-nav button').forEach(btn => {
+        btn.className = navBtnBase;
+    });
+
     // Almacenar referencias de botones globalmente
     headerNavButtons = {
         'dashboard': header.querySelector('#nav-dashboard'),
